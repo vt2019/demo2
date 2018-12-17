@@ -15,7 +15,7 @@ pipeline {
     stage('First stage') {
       steps {
         container('s2i') {
-          s2i build . pingworks/demo-builder:2 demo2:0.0.6
+          sh "s2i build . pingworks/demo-builder:2:{BRUNCH_NAME}"
         }
       }
     }
